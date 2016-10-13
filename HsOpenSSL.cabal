@@ -54,18 +54,11 @@ Library
         bytestring >= 0.9,
         network    >= 2.1,
         old-locale >= 1.0,
-        time       >= 1.1.1
+        time       >= 1.1.1,
         -- old-locale is only needed if time < 1.5, but Cabal does not
         -- allow us to express conditional dependencies like this.
-
-    if flag(fast-bignum)
-        CPP-Options: -DFAST_BIGNUM
-        if impl(ghc >= 6.11)
-            -- TODO: integer-gmp >= 1 is not supported yet.
-            -- https://github.com/phonohawk/HsOpenSSL/issues/36
-            Build-Depends: integer-gmp >= 0.2 && < 1
-        else
-            Build-Depends: ghc-prim, integer
+        ghc-prim,
+        integer
 
     if os(mingw32)
         Extra-Libraries: eay32 ssl32
