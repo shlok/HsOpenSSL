@@ -57,8 +57,7 @@ Library
         time       >= 1.1.1,
         -- old-locale is only needed if time < 1.5, but Cabal does not
         -- allow us to express conditional dependencies like this.
-        ghc-prim,
-        integer
+        ghc-prim
 
     if os(mingw32)
         Extra-Libraries: eay32 ssl32
