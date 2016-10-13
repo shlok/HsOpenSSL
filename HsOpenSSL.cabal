@@ -63,7 +63,7 @@ Library
         if impl(ghc >= 6.11)
             -- TODO: integer-gmp >= 1 is not supported yet.
             -- https://github.com/phonohawk/HsOpenSSL/issues/36
-            Build-Depends: integer-gmp >= 0.2
+            Build-Depends: integer-gmp >= 0.2 && < 1
         else
             Build-Depends: ghc-prim, integer
 
